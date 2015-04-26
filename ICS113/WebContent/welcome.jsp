@@ -391,11 +391,7 @@
 		<img id="imageyes" src="holder.js/176x193" class="component image" /><br>
 	
 		<span id="memlog" class="component" style="white-space:normal;">
-		<% 
-			Cookie[] emailYes = request.getCookies();
-			String temp=emailYes[emailYes.length-1].getValue();
-			out.print("<h4> Welcome, </h4>" + temp + "!");  
-		%>
+		<h4>Welcome!</h4>
 			<br><br>
 		<a href="profile.jsp">Go to account</a><br>
 		<a href="index.jsp">Log out</a>
