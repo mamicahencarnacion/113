@@ -5,414 +5,415 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/datepicker.css">
-	<link rel="stylesheet" href="css/colorpicker.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.3.custom.min.css">
-	<link rel="stylesheet" href="css/jquery.orgchart.css">
-	<link rel="stylesheet" href="css/jquery.treeview.css">
 	
 	
 	<style type="text/css">
-	body{
-		background-color: #F4DEC8;
-		float:center;
+		body{
+			background-color: #F4DEC8;
+			float:center;
+			}
+		
+		#canvas {
+			position:absolute;
+			left:0px;
+			top:0px;
+		}
+		.component {
+			position:absolute;
+			white-space: nowrap;
+		}
+		.rComponent {
+			position:absolute;
+			white-space: nowrap;
 		}
 	
-	#napkeeCanvas {
-		position:absolute;
-		left:0px;
-		top:0px;
-	}
-	.napkeeComponent {
-		position:absolute;
-		white-space: nowrap;
-	}
-	.napkeeRelativeComponent {
-		position:absolute;
-		white-space: nowrap;
-	}
-	
-	
-#nap1container{
-	left:887px;
-	top:73px;
-	z-index:1;
-}
-#nap1{
-	height:644px;
-}
-	
-#title{
-	width: 100%;
-	top:20px;
-	float: center;
-	margin-left: auto;
-	margin-right: auto;
-	height:95px;
-	z-index:2;
-	background-color:#FFFFFF;
-	border-bottom: 4px solid #7A3D00;
-	opacity:1.0;
-	filter:alpha(opacity=100);
-	-moz-border-radius:0px;
-	-webkit-border-radius:0px;
-}
-	
-#footer{
-	bottom:-370px;
-	width:100%;
-	height:45px;
-	z-index:4;
-	background-color:#FFFFFF;
-	opacity:1.0;
-	filter:alpha(opacity=100);
-	border:1px solid #000;
-	-moz-border-radius:0px;
-	-webkit-border-radius:0px;
-}
+		#nap1container{
+			left:887px;
+			top:73px;
+			z-index:1;
+		}
+		#nap1{
+			height:644px;
+		}
+			
+		#title{
+			width: 100%;
+			top:20px;
+			float: center;
+			margin-left: auto;
+			margin-right: auto;
+			height:95px;
+			z-index:2;
+			background-color:#FFFFFF;
+			border-bottom: 4px solid #7A3D00;
+			opacity:1.0;
+			filter:alpha(opacity=100);
+			-moz-border-radius:0px;
+			-webkit-border-radius:0px;
+		}
+			
+		#footer{
+			bottom:-370px;
+			width:100%;
+			height:45px;
+			z-index:4;
+			background-color:#FFFFFF;
+			opacity:1.0;
+			filter:alpha(opacity=100);
+			border:1px solid #000;
+			-moz-border-radius:0px;
+			-webkit-border-radius:0px;
+		}
 
-	
-#maintitle a{
-	position: absolute;
-	left: 590px;
-	top:25px;
-	height:43px;
-	z-index:6;
-	font-size: 40px;
-	font-style:normal;
-	font-weight:normal;
-	font-family: lucida handwriting;
-	text-decoration:none;
-	text-align:center;
-	color:#000000;
-}
+			
+		#maintitle a{
+			position: absolute;
+			left: 590px;
+			top:25px;
+			height:43px;
+			z-index:6;
+			font-size: 40px;
+			font-style:normal;
+			font-weight:normal;
+			font-family: lucida handwriting;
+			text-decoration:none;
+			text-align:center;
+			color:#000000;
+		}
 
-	
-#subtitle{
-	right: 180px;
-	top:59px;
-	height:23px;
-	z-index:7;
-	font-size: 20px;
-	font-style:italic;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:center;
-	color:#000000;
-}
-	
-#menu{
-	left:16px;
-	top:97px;
-	width:854px;
-	height:27px;
-	z-index:18;
-	font-color: 
-	font-size: 16px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-}
-#menu li {
-	width:187px;
-	height:27px;
-	line-height:27px;
-}
-#menu li a{
-	text-decoration:none;
-}
-	
-#img1{
-	left:216px;
-	top:210px;
-	width:106px;
-	height:93px;
-	z-index:7;
-	border:0px solid;
-}
+			
+		#subtitle{
+			right: 180px;
+			top:59px;
+			height:23px;
+			z-index:7;
+			font-size: 20px;
+			font-style:italic;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:center;
+			color:#000000;
+		}
+			
+		#menu{
+			left:16px;
+			top:97px;
+			width:854px;
+			height:27px;
+			z-index:18;
+			font-color: 
+			font-size: 16px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+		}
+		#menu li {
+			width:187px;
+			height:27px;
+			line-height:27px;
+		}
+		#menu li a{
+			text-decoration:none;
+		}
+			
+		#img1{
+			left:216px;
+			top:210px;
+			width:106px;
+			height:93px;
+			z-index:7;
+			border:0px solid;
+		}
 
-#img1table{
-	left:106px;
-	top:260px;
-	width:106px;
-	height:93px;
-	z-index:8;
-	display:none;
-}
+		#img1table{
+			left:106px;
+			top:260px;
+			width:106px;
+			height:93px;
+			z-index:8;
+			display:none;
+		}
 
-#img1label{
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#country{
-	left:440px;
-	top:464px;
-	width:158px;
-	z-index:8;
-	font-size: 12px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-}
-	
-#ln{
-	left:440px;
-	top:244px;
-	width:276px;
-	z-index:9;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#fn{
-	left:440px;
-	top:278px;
-	width:131px;
-	z-index:10;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#mn{
-	left:589px;
-	top:278px;
-	width:127px;
-	z-index:11;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#hadd1{
-	left:440px;
-	top:337px;
-	width:276px;
-	z-index:12;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#hadd2{
-	left:440px;
-	top:371px;
-	width:276px;
-	z-index:13;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#sc{
-	left:440px;
-	top:405px;
-	width:276px;
-	z-index:14;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#tit{
-	left:440px;
-	top:210px;
-	width:158px;
-	z-index:15;
-	font-size: 12px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-}
-	
-#zip{
-	left:602px;
-	top:464px;
-	width:113px;
-	z-index:16;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#hnum{
-	left:440px;
-	top:498px;
-	width:276px;
-	z-index:17;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#mnum{
-	left:440px;
-	top:533px;
-	width:276px;
-	z-index:18;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#gender{
-	left:766px;
-	top:210px;
-	width:189px;
-	z-index:19;
-	font-size: 12px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	
-}
-	
-#day{
-	left:849px;
-	top:244px;
-	width:75px;
-	z-index:20;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#month{
-	left:766px;
-	top:244px;
-	width:80px;
-	z-index:21;
-	font-size: 12px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-}
-	
-#year{
-	left:941px;
-	top:244px;
-	width:75px;
-	z-index:22;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#chooseimg{
-	left:218px;
-	top:413px;
-	width:165px;
-	height:19px;
-	z-index:23;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:underline;
-}
-	
-#ccard{
-	left:218px;
-	top:450px;
-	width:158px;
-	z-index:24;
-	font-size: 12px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-}
-	
-#cnum{
-	left:218px;
-	top:483px;
-	width:155px;
-	z-index:25;
-	background-color:#FFFFFF;
-	color:#000000;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-align:left;
-}
-	
-#createacct{
-	left:942px;
-	top:632px;
-	z-index:26;
-}
+		#img1label{
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#country{
+			left:440px;
+			top:464px;
+			width:158px;
+			z-index:8;
+			font-size: 12px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+		}
+			
+		#ln{
+			left:440px;
+			top:244px;
+			width:276px;
+			z-index:9;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#fn{
+			left:440px;
+			top:278px;
+			width:131px;
+			z-index:10;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#mn{
+			left:589px;
+			top:278px;
+			width:127px;
+			z-index:11;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#hadd1{
+			left:440px;
+			top:337px;
+			width:276px;
+			z-index:12;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#hadd2{
+			left:440px;
+			top:371px;
+			width:276px;
+			z-index:13;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#sc{
+			left:440px;
+			top:405px;
+			width:276px;
+			z-index:14;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#tit{
+			left:440px;
+			top:210px;
+			width:158px;
+			z-index:15;
+			font-size: 12px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+		}
+			
+		#zip{
+			left:602px;
+			top:464px;
+			width:113px;
+			z-index:16;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#hnum{
+			left:440px;
+			top:498px;
+			width:276px;
+			z-index:17;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#mnum{
+			left:440px;
+			top:533px;
+			width:276px;
+			z-index:18;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+		
+		#email{
+			left:440px;
+			top:568px;
+			width:276px;
+			z-index:18;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#gender{
+			left:766px;
+			top:210px;
+			width:189px;
+			z-index:19;
+			font-size: 12px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			
+		}
+			
+		#birthday{
+			left:766px;
+			top:245px;
+			width:189px;
+			z-index:19;
+			font-size: 12px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+		}
+		
+		#password{
+			left:766px;
+			top:300px;
+			width:189px;
+			z-index:19;
+			font-size: 12px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+		}
+		
+		#confirmPass{
+			left:766px;
+			top:335px;
+			width:189px;
+			z-index:19;
+			font-size: 12px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+		}
+			
+		#chooseimg{
+			left:218px;
+			top:413px;
+			width:165px;
+			height:19px;
+			z-index:23;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+			
+		#ccard{
+			left:218px;
+			top:450px;
+			width:158px;
+			z-index:24;
+			font-size: 12px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+		}
+			
+		#cnum{
+			left:218px;
+			top:483px;
+			width:155px;
+			z-index:25;
+			background-color:#FFFFFF;
+			color:#000000;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+			text-align:left;
+		}
+			
+		#createacct{
+			left:900px;
+			top:400px;
+			z-index:26;
+		}
 
-#createacct.napkee {
-	width:115px;
-	height:27px;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-}
+		#createacct.napkee {
+			width:115px;
+			height:27px;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:none;
+		}
 
-	
-#printlink{
-	left:843px;
-	top:639px;
-	width:77px;
-	height:19px;
-	z-index:27;
-	font-size: 14px;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:underline;
-}
+			
+		#printlink{
+			left:790px;
+			top:400px;
+			width:77px;
+			height:19px;
+			z-index:27;
+			font-size: 14px;
+			font-style:normal;
+			font-weight:normal;
+			text-decoration:underline;
+		}
 	
 	</style>
 	
@@ -420,311 +421,92 @@
 	<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
 	<script src="js/jquery.migration.js"></script>
     <script src="js/bootstrap.min.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/jquery.swfobject.1-0.5.min.js"></script>
-    <script src="js/swfobject.js"></script>
-    <script src="js/jquery.sparkline.min.js"></script>
-    <script src="js/bootstrap-colorpicker.js"></script>
-    <script src="js/jquery.tools.min.js"></script>
     <script src="js/holder.js"></script>
-    <script src="js/jquery.orgchart.min.js"></script>
-    <script src="js/jquery.treeview.min.js"></script>
-    <script src="js/jquery.tagcloud.min.js"></script>
 	
   </head>
   <body>
-  
-	
-<div id="title" class="napkeeComponent napkeeCanvas">
-<span id="maintitle" class="napkeeRelativeComponent napkeeTitle">
-		<a href="#" id="menui0">Encarino Country and Golf Club</a></span>
-				
-<span id="subtitle" class="napkeeRelativeComponent napkeeSubTitle">the place where everyone belongs</span>
+	<div id="title" class="component canvas">
+		<span id="maintitle" class="rComponent napkeeTitle">
+			<a href="index.html">Encarino Country and Golf Club</a></span>
+		<span id="subtitle" class="rComponent napkeeSubTitle">the place where everyone belongs</span>
 	</div>
 	
-<div id="footer" class="napkeeComponent napkeeCanvas"></div>
+	<div id="footer" class="component canvas"></div>
 	
-<div id="menu" class="btn-group napkeeComponent napkeeButtonbar">
-<a class="btn" href="#" id="menui1">Home</a>
-<a class="btn" href="#" id="menui2">Gallery</a>
-<a class="btn active" href="#" id="menui3">Membership</a>
-<a class="btn" href="#" id="menui4">Contact Us</a>
-</div>
+		<div id="menu" class="btn-group">
+			<a class="btn" href="index.html">Home</a>
+			<a class="btn" href="GalleryEncarinoCG.html">Gallery</a>
+			<a class="btn active" href="MembershipEncarinoCG.html">Membership</a>
+			<a class="btn" href="ContactUsEncarinoCG.html">Contact Us</a>
+		</div>
 	
-<img id="img1" src="js/holder.js/176x193" class="napkeeComponent napkeeImage" />
-<table border="0" id="img1table" class="napkeeComponent napkeeImageTable" >
-	<tr>
-		<td align="center" valign="middle">
-			<span id="img1label" class="napkeeImageLabel"></span>
-		</td>
-	</tr>
-</table>
+		<img id="img1" src="js/holder.js/176x193" class="component image" />
+		<table border="0" id="img1table" class="component imageTable" >
+			<tr>
+				<td align="center" valign="middle">
+					<span id="img1label" class="napkeeImageLabel"></span>
+				</td>
+			</tr>
+		</table>
 
-	
-<select id="tit" class="napkeeComponent napkeeCombobox">
-<option>Title</option>
-</select>
-	
-<input id="ln" type="text" placeholder="Last Name" class="napkeeComponent napkeeTextinput" />
-	
-<input id="fn" type="text" placeholder="First Name" class="napkeeComponent napkeeTextinput" />
-	
-<input id="mn" type="text" placeholder="Middle Name" class="napkeeComponent napkeeTextinput" />
-	
-<input id="hadd1" type="text" placeholder="Home Address" class="napkeeComponent napkeeTextinput" />
-	
-<input id="hadd2" type="text" placeholder="Home Address" class="napkeeComponent napkeeTextinput" />
-	
-<input id="sc" type="text" placeholder="State/City" class="napkeeComponent napkeeTextinput" />
-	
-<select id="country" class="napkeeComponent napkeeCombobox">
-<option>Country</option>
-</select>
-	
-<input id="zip" type="text" placeholder="Zip Code" class="napkeeComponent napkeeTextinput" />
-	
-<input id="hnum" type="text" placeholder="Home Number" class="napkeeComponent napkeeTextinput" />
-	
-<input id="mnum" type="text" placeholder="Mobile Number" class="napkeeComponent napkeeTextinput" />
-	
-<select id="gender" class="napkeeComponent napkeeCombobox">
-<option>Gender</option>
-<option>Male</option>
-<option>Female</option>
-</select>
-	
-<input id="day" type="text" placeholder="Day" class="napkeeComponent napkeeTextinput" />
-	
-<select id="month" class="napkeeComponent napkeeCombobox">
-<option>Month</option>
-</select>
-	
-<input id="year" type="text" placeholder="Year" class="napkeeComponent napkeeTextinput" />
-	
-<a id="chooseimg" href="#" class="napkeeComponent napkeeLink">Choose from your computer</a>
-	
-<select id="ccard" class="napkeeComponent napkeeCombobox">
-<option>Credit Card Type</option>
-</select>
-	
-<input id="cnum" type="text" placeholder="Credit Card Number" class="napkeeComponent napkeeTextinput" />
-	
-<button id="createacct" type="button" class="napkeeComponent napkeeButton btn">Create Account</button>
-	
-<a id="printlink" href="#" class="napkeeComponent napkeeLink">Printed Copy</a>
-	
-	
-    <script type="text/javascript" charset="utf-8">
-	    function showMockup(url,params){
-			var finalUrl = url + "?";
-			if (params!=null){
-				jQuery.each(params, function(par, field){
-					finalUrl += par + "=" + $("#"+field).val() + "&";
-				});
-			}
-			location.href = finalUrl;
-		}
-		$(document).ready(function(){
-			$(".accordion").each(function(){
-				var _acc = $(this);
-				_acc.find(".accordion-inner").height(_acc.height() - (_acc.find(".accordion-inner").length * 36));
-			});
-			$(document).on("click", function(e){
-				$("[data-date]").datepicker('show');
-			});
-		
+	<form>
+		<select id="tit" class="component">
+			<option>Title</option>
+		</select>
 			
+		<input id="ln" type="text" placeholder="Last Name" class="component" required/>
+		<input id="fn" type="text" placeholder="First Name" class="component" required/>
+		<input id="mn" type="text" placeholder="Middle Name" class="component" required/>
+		<input id="hadd1" type="text" placeholder="Address Line 1" class="component" required/>
+		<input id="hadd2" type="text" placeholder="Address Line 2" class="component" required/>
+		<input id="sc" type="text" placeholder="State/City" class="component" required/>
+			
+		<select id="country" class="component">
+			<option>Country</option>
+		</select>
+			
+		<input id="zip" type="text" placeholder="Zip Code" class="component" required/>
+		<input id="hnum" type="text" placeholder="Home Number" class="component" />
+		<input id="mnum" type="text" placeholder="Mobile Number" class="component" required/>
+		<input id="email" type="email" placeholder="Email Address" class="component" required/>
+			
+		<select id="gender" class="component">
+			<option>Gender</option>
+		<option>Male</option>
+		<option>Female</option>
+		</select>	
+		<input id="birthday" type="date" class="component" required></input>
+		<input id="password" type="password" placeholder="Password (must be 8-30 characters)" class="component" required/>
+		<input id="confirmPass" type="password" placeholder="Confirm Password" class="component" required/>
+		
+		<a id="chooseimg" href="#" class="component napkeeLink">Choose from your computer</a>
+			
+		<select id="ccard" class="component">
+			<option>Credit Card Type</option>
+		</select>
+			
+		<input id="cnum" type="text" placeholder="Credit Card Number" class="component" />
+		<button id="createacct" type="submit" class="component napkeeButton btn" onsubmit="alert()">Create Account</button>
+	</form>
 	
-$("title").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
+		<a id="printlink" href="#" class="component napkeeLink">Printed Copy</a>
+		<script>
+			var password = document.getElementById("password"), confirm_password = document.getElementById("confirmPass");
 
-});
-	
-$("#footer").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
+			function validatePassword(){
+			  if(password.value != confirm_password.value) {
+				confirm_password.setCustomValidity("Passwords Don't Match");
+			  } else {
+				confirm_password.setCustomValidity('');
+			  }
+			}
 
-});
-	
-$("#maintitle").click(function(event){
-	showMockup('EncarinoCGHome.html');
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-$("subtitle").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-
-$("#menu").click(function(event){
-});
-
-$("#menui1").click(function(event){
-	showMockup('EncarinoCGHome.html');
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-
-$("#menui2").click(function(event){
-	showMockup('GalleryEncarinoCG.html');
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-
-$("#menui3").click(function(event){
-	showMockup('MembershipEncarinoCG.html');
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-
-$("#menui4").click(function(event){
-	showMockup('ContactUsEncarinoCG.html');
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-
-$("#menui5").click(function(event){
-});
-
-	
-$("#img1").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-$("#country").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-$("#ln").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#fn").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#mn").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#hadd1").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#hadd2").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#sc").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#tit").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-$("#zip").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#hnum").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#mnum").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#gender").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-$("#day").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#month").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-$("#year").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#chooseimg").click(function(event){
-	event.preventDefault();
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-$("#ccard").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-$("#cnum").click(function(event){
-	event.stopPropagation();
-	event.preventDefault();
-});
-	
-$("#createacct").click(function(event){
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-$("#printlink").click(function(event){
-	event.preventDefault();
-	
-	event.stopPropagation();
-	event.preventDefault();
-
-});
-	
-		});
-	</script>
+			password.onchange = validatePassword;
+			confirm_password.onkeyup = validatePassword;
+			
+			function alert(){
+				alert("Online registration is complete. Please send hard copy of registration through email or on-site. Thank you!");
+			}
+		</script>
   </body>
 </html>
