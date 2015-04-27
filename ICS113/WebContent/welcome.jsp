@@ -1,9 +1,3 @@
-<%
-			String email = request.getParameter("email");
-			Cookie setEmail = new Cookie("email", email);
-			response.addCookie(setEmail);
-			setEmail.setMaxAge(60*60*24);
-		%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -406,6 +400,7 @@
 		<div id="menu" class="btn-group">
 			<a class="btn active" href="welcome.jsp">Home</a>
 			<a class="btn" href="gallery.jsp">Gallery</a>
+			<a class="btn" href="profile.jsp">Profile</a>
 			<a class="btn" href="contactUs.jsp">Contact Us</a>
 		</div>
 	

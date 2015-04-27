@@ -218,6 +218,7 @@
 		<div id="menu" class="btn-group">
 			<a class="btn" href="welcome.jsp">Home</a>
 			<a class="btn active" href="gallery.jsp">Gallery</a>
+			<a class="btn" href="profile.jsp">Profile</a>
 			<a class="btn" href="contactUs.jsp">Contact Us</a>
 		</div>
 	

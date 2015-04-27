@@ -393,6 +393,7 @@
 <div id="menu" class="btn-group napkeeComponent napkeeButtonbar">
 <a class="btn" href="#" id="menui1">Home</a>
 <a class="btn" href="#" id="menui2">Gallery</a>
+<a class="btn" href="profile.jsp">Profile</a>
 <a class="btn active" href="#" id="menui4">Contact Us</a>
 </div>
 	
