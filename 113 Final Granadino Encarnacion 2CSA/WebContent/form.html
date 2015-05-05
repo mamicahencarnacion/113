@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>[title]</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/datepicker.css">
+	<link rel="stylesheet" href="css/colorpicker.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.3.custom.min.css">
+	<link rel="stylesheet" href="css/jquery.orgchart.css">
+	<link rel="stylesheet" href="css/jquery.treeview.css">
+	
+	
+	<style type="text/css">
+	body{
+		background-color: #EADAE1;
+		
+		}
+	
+	#napkeeCanvas {
+		position:absolute;
+		left:0px;
+		top:0px;
+	}
+	.napkeeComponent {
+		position:absolute;
+		white-space: nowrap;
+	}
+	.napkeeRelativeComponent {
+		position:absolute;
+		white-space: nowrap;
+	}
+	
+	
+#img1{
+	right:346px;
+	top:210px;
+	width:176px;
+	height:193px;
+	z-index:7;
+	border:0px solid;
+}
+
+
+#country{
+	left:440px;
+	top:464px;
+	width:145px;
+	z-index:16;
+	font-size: 12px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+}
+	
+#ln{
+	left:440px;
+	top:244px;
+	width:276px;
+	z-index:9;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#fn{
+	left:440px;
+	top:278px;
+	width:131px;
+	z-index:10;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#mn{
+	left:589px;
+	top:278px;
+	width:127px;
+	z-index:11;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#hadd1{
+	left:440px;
+	top:337px;
+	width:276px;
+	z-index:12;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#hadd2{
+	left:440px;
+	top:371px;
+	width:276px;
+	z-index:13;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#sc{
+	left:440px;
+	top:405px;
+	width:276px;
+	z-index:14;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#tit{
+	left:440px;
+	top:210px;
+	width:158px;
+	z-index:15;
+	font-size: 12px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+}
+	
+#zip{
+	left:602px;
+	top:464px;
+	width:113px;
+	z-index:16;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#hnum{
+	left:440px;
+	top:498px;
+	width:276px;
+	z-index:17;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#mnum{
+	left:440px;
+	top:533px;
+	width:276px;
+	z-index:18;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+
+#email{
+	left:440px;
+	top:568px;
+	width:276px;
+	z-index:18;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#gender{
+	left:212px;
+	top:210px;
+	width:193px;
+	z-index:19;
+	font-size: 12px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	
+}
+	
+#day{
+	left:309px;
+	top:244px;
+	width:80px;
+	z-index:20;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#month{
+	left:212px;
+	top:245px;
+	width:85px;
+	z-index:21;
+	font-size: 12px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+}
+	
+#year{
+	left:212px;
+	top:274px;
+	width:178px;
+	z-index:22;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#chooseimg{
+	right:368px;
+	top:413px;
+	width:165px;
+	height:19px;
+	z-index:23;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:underline;
+	font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+
+}
+	
+#ccard{
+	right:368px;
+	top:450px;
+	width:158px;
+	z-index:24;
+	font-size: 12px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+}
+	
+#cnum{
+	right:365px;
+	top:483px;
+	width:155px;
+	z-index:25;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+
+#pw{
+	right:365px;
+	top:530px;
+	width:155px;
+	z-index:25;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+
+#cpw{
+	right:365px;
+	top:560px;
+	width:155px;
+	z-index:25;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-align:left;
+}
+	
+#createacct{
+	left:642px;
+	top:610px;
+	z-index:26;
+	width:115px;
+	height:27px;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+}
+
+	
+#printlink{
+	left:498px;
+	top:615px;
+	width:77px;
+	height:19px;
+	z-index:27;
+	font-size: 14px;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:underline;
+	font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+	#cssmenu,
+	#cssmenu ul,
+	#cssmenu ul li,
+	#cssmenu ul li a,
+	#cssmenu #menu-button {
+	  margin: 0;
+	  padding-top: 0px;
+	  padding-left: 25px;
+	  padding-right: 3px;
+	  padding-bottom: 1px;
+	  border: 0;
+	  list-style: none;
+	  line-height: 1;
+	  display: block;
+	  position: relative;
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	}
+	#cssmenu:after,
+	#cssmenu > ul:after {
+	  content: ".";
+	  display: block;
+	  clear: both;
+	  visibility: hidden;
+	  line-height: 0;
+	  height: 0;
+	}
+	#cssmenu #menu-button {
+	  display: none;
+	}
+	#cssmenu {
+	  width: 45%;
+	 margin-top:-6%;
+	  font-family: 'Open Sans', sans-serif;
+	  line-height: 13;
+	  margin-left: 25%;
+	  background-color: #F8F8F8;
+	
+	}
+	#menu-line {
+	  position: absolute;
+	  top: 0;
+	  left: 3%;
+	  height: 3px;
+	  background: #009ae1;
+	  -webkit-transition: all 0.25s ease-out;
+	  -moz-transition: all 0.25s ease-out;
+	  -ms-transition: all 0.25s ease-out;
+	  -o-transition: all 0.25s ease-out;
+	  transition: all 0.25s ease-out;
+	}
+	#cssmenu > ul > li {
+	  float: left;
+	}
+	#cssmenu.align-center > ul {
+	  font-size: 0;
+	  text-align: center;
+	}
+	#cssmenu.align-center > ul > li {
+	  display: inline-block;
+	  float: none;
+	}
+	#cssmenu.align-center ul ul {
+	  text-align: left;
+	}
+	#cssmenu.align-right > ul > li {
+	  float: right;
+	}
+	#cssmenu.align-right ul ul {
+	  text-align: right;
+	}
+	#cssmenu > ul > li > a {
+	  padding-bottom: 13%;
+	  font-size: 12px;
+	  text-decoration: none;
+	  text-transform: uppercase;
+	  color: #000000;
+	  -webkit-transition: color .2s ease;
+	  -moz-transition: color .2s ease;
+	  -ms-transition: color .2s ease;
+	  -o-transition: color .2s ease;
+	  transition: color .2s ease;
+	}
+	#cssmenu > ul > li:hover > a,
+	#cssmenu > ul > li.active > a {
+	  color: #009ae1;
+	}
+	#cssmenu > ul > li.has-sub > a {
+	  padding-right: 25px;
+	}
+	#cssmenu > ul > li.has-sub > a::after {
+	  position: absolute;
+	  top: 21px;
+	  right: 10px;
+	  width: 4px;
+	  height: 4px;
+	  border-bottom: 1px solid #000000;
+	  border-right: 1px solid #000000;
+	  content: "";
+	  -webkit-transform: rotate(45deg);
+	  -moz-transform: rotate(45deg);
+	  -ms-transform: rotate(45deg);
+	  -o-transform: rotate(45deg);
+	  transform: rotate(45deg);
+	  -webkit-transition: border-color 0.2s ease;
+	  -moz-transition: border-color 0.2s ease;
+	  -ms-transition: border-color 0.2s ease;
+	  -o-transition: border-color 0.2s ease;
+	  transition: border-color 0.2s ease;
+	}
+	#cssmenu > ul > li.has-sub:hover > a::after {
+	  border-color: #009ae1;
+	}
+	#cssmenu ul ul {
+	  position: absolute;
+	  left: -9999px;
+	}
+	#cssmenu li:hover > ul {
+	  left: auto;
+	}
+	#cssmenu.align-right li:hover > ul {
+	  right: 0;
+	}
+	#cssmenu ul ul ul {
+	  margin-left: 100%;
+	  top: 0;
+	}
+	#cssmenu.align-right ul ul ul {
+	  margin-left: 0;
+	  margin-right: 100%;
+	}
+	#cssmenu ul ul li {
+	  height: 0;
+	  -webkit-transition: height .2s ease;
+	  -moz-transition: height .2s ease;
+	  -ms-transition: height .2s ease;
+	  -o-transition: height .2s ease;
+	  transition: height .2s ease;
+	}
+	#cssmenu ul li:hover > ul > li {
+	  height: 32px;
+	}
+	#cssmenu ul ul li a {
+	  padding: 10px 20px;
+	  width: 160px;
+	  font-size: 12px;
+	  background: #333333;
+	  text-decoration: none;
+	  color: #dddddd;
+	  -webkit-transition: color .2s ease;
+	  -moz-transition: color .2s ease;
+	  -ms-transition: color .2s ease;
+	  -o-transition: color .2s ease;
+	  transition: color .2s ease;
+	}
+	#cssmenu ul ul li:hover > a,
+	#cssmenu ul ul li a:hover {
+	  color: #ffffff;
+	}
+	#cssmenu ul ul li.has-sub > a::after {
+	  position: absolute;
+	  top: 13px;
+	  right: 10px;
+	  left: 10%
+	  width: 4px;
+	  height: 4px;
+	  border-bottom: 1px solid #dddddd;
+	  border-right: 1px solid #dddddd;
+	  content: "";
+	  -webkit-transform: rotate(-45deg);
+	  -moz-transform: rotate(-45deg);
+	  -ms-transform: rotate(-45deg);
+	  -o-transform: rotate(-45deg);
+	  transform: rotate(-45deg);
+	  -webkit-transition: border-color 0.2s ease;
+	  -moz-transition: border-color 0.2s ease;
+	  -ms-transition: border-color 0.2s ease;
+	  -o-transition: border-color 0.2s ease;
+	  transition: border-color 0.2s ease;
+	}
+	#cssmenu.align-right ul ul li.has-sub > a::after {
+	  right: auto;
+	  left: 10px;
+	  border-bottom: 0;
+	  border-right: 0;
+	  border-top: 1px solid #dddddd;
+	  border-left: 1px solid #dddddd;
+	}
+	#cssmenu ul ul li.has-sub:hover > a::after {
+	  border-color: #ffffff;
+	}
+	@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+	  #cssmenu {
+		width: 100%;
+	  }
+	  #cssmenu ul {
+		width: 100%;
+		display: none;
+	  }
+	  #cssmenu.align-center > ul,
+	  #cssmenu.align-right ul ul {
+		text-align: left;
+	  }
+	  #cssmenu ul li,
+	  #cssmenu ul ul li,
+	  #cssmenu ul li:hover > ul > li {
+		width: 100%;
+		height: auto;
+		border-top: 1px solid rgba(120, 120, 120, 0.15);
+	  }
+	  #cssmenu ul li a,
+	  #cssmenu ul ul li a {
+		width: 100%;
+	  }
+	  #cssmenu > ul > li,
+	  #cssmenu.align-center > ul > li,
+	  #cssmenu.align-right > ul > li {
+		float: none;
+		display: block;
+	  }
+	  #cssmenu ul ul li a {
+		padding: 20px 20px 20px 30px;
+		font-size: 12px;
+		color: #000000;
+		background: none;
+	  }
+	  #cssmenu ul ul li:hover > a,
+	  #cssmenu ul ul li a:hover {
+		color: #000000;
+	  }
+	  #cssmenu ul ul ul li a {
+		padding-left: 40px;
+	  }
+	  #cssmenu ul ul,
+	  #cssmenu ul ul ul {
+		position: relative;
+		left: 0;
+		right: auto;
+		width: 100%;
+		margin: 0;
+	  }
+	  #cssmenu > ul > li.has-sub > a::after,
+	  #cssmenu ul ul li.has-sub > a::after {
+		display: none;
+	  }
+	  #menu-line {
+		display: none;
+	  }
+	  #cssmenu #menu-button {
+		display: block;
+		padding: 20px;
+		color: #000000;
+		cursor: pointer;
+		font-size: 12px;
+		text-transform: uppercase;
+	  }
+	  #cssmenu #menu-button::after {
+		content: '';
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		display: block;
+		width: 15px;
+		height: 2px;
+		background: #000000;
+	  }
+	  #cssmenu #menu-button::before {
+		content: '';
+		position: absolute;
+		top: 25px;
+		right: 20px;
+		display: block;
+		width: 15px;
+		height: 3px;
+		border-top: 2px solid #000000;
+		border-bottom: 2px solid #000000;
+	  }
+	  #cssmenu .submenu-button {
+		position: absolute;
+		z-index: 10;
+		right: 0;
+		top: 0;
+		display: block;
+		border-left: 1px solid rgba(120, 120, 120, 0.15);
+		height: 52px;
+		width: 52px;
+		cursor: pointer;
+	  }
+	  #cssmenu .submenu-button::after {
+		content: '';
+		position: absolute;
+		top: 21px;
+		left: 26px;
+		display: block;
+		width: 1px;
+		height: 11px;
+		background: #000000;
+		z-index: 99;
+	  }
+	  #cssmenu .submenu-button::before {
+		content: '';
+		position: absolute;
+		left: 21px;
+		top: 26px;
+		display: block;
+		width: 11px;
+		height: 1px;
+		background: #000000;
+		z-index: 99;
+	  }
+	  #cssmenu .submenu-button.submenu-opened:after {
+		display: none;
+	  }
+	}
+	
+	</style>
+	
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="js/jquery.migration.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.swfobject.1-0.5.min.js"></script>
+    <script src="js/swfobject.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
+    <script src="js/bootstrap-colorpicker.js"></script>
+    <script src="js/jquery.tools.min.js"></script>
+    <script src="js/holder.js"></script>
+    <script src="js/jquery.orgchart.min.js"></script>
+    <script src="js/jquery.treeview.min.js"></script>
+    <script src="js/jquery.tagcloud.min.js"></script>
+	
+  </head>
+  <body>
+  
+	<div id="titlebar" style="margin-top: -1%; width: 100%;
+		height: auto; background-color: #F8F8F8;border-bottom: 5px solid #E6005C;">
+<img id="logo" src="logo.jpg" style= "width: 20%;margin-left: 5% ; margin-top: 0.2%"/>
+</div>
+
+<div id='cssmenu'>
+
+	
+		<ul>
+			<li><a href='index.html'>Home</a></li>
+		   <li><a href='about.html'>Overview</a></li>
+		   <li class='has-sub'><a href='#'>Gallery</a>
+			  <ul>
+				 <li><a href='golf.html'>Golf Course</a></li>
+				 <li><a href='villa.html'>Villas</a></li>
+				 <li><a href='resto.html'>Coffee and Resto Bar</a></li>
+				 <li><a href='ride.html'>Riding Clubs</a></li>
+				 <li><a href='well.html'>Wellness Center</a></li>
+			  </ul>
+		   </li>
+		   <li><a href='contact.html'>Contact</a></li>
+		</ul>
+	</div>
+	
+
+	
+	<div id="container" style="background-color: #fff; width:68%;height: 100%;
+		margin-left: 11%;margin-top: 6%; padding: 35% 2% 2% 2%; box-shadow: 8px 9px 5px #7A7A7A;">
+		
+<img id="img1" src="avatar.png" class="napkeeComponent napkeeImage" />
+
+
+<form action="Register" method="post">
+<select name="tit" id="tit" class="napkeeComponent napkeeCombobox">
+<option>Title</option>
+<option>Mr.</option>
+<option>Mrs.</option>
+<option>Ms.</option>
+</select>
+	
+<input id="ln" name="ln" type="text" placeholder="Last Name" class="napkeeComponent napkeeTextinput" required/>
+	
+<input id="fn" name="fn" type="text" placeholder="First Name" class="napkeeComponent napkeeTextinput" required/>
+	
+<input id="mn" name="mn"type="text" placeholder="Middle Name" class="napkeeComponent napkeeTextinput" />
+	
+<input id="hadd1" name="hadd1" type="text" placeholder="Home Address" class="napkeeComponent napkeeTextinput" required/>
+	
+<input id="hadd2" name="hadd2"type="text" placeholder="Home Address" class="napkeeComponent napkeeTextinput" required/>
+	
+<input id="sc" name="sc"type="text" placeholder="State/City" class="napkeeComponent napkeeTextinput" required/>
+	
+<input id="country" name="country"type="text" placeholder="Country" class="napkeeComponent napkeeTextinput"/>
+
+	
+<input id="zip" name="zip"type="text" placeholder="Zip Code" class="napkeeComponent napkeeTextinput" required/>
+	
+<input id="hnum" name="hnum"type="text" placeholder="Home Number" class="napkeeComponent napkeeTextinput" />
+	
+<input id="mnum" name="mnum"type="text" placeholder="Mobile Number" class="napkeeComponent napkeeTextinput" />
+<input id="email" name="email"type="email" placeholder="Email Address" class="napkeeComponent napkeeTextinput" required/>
+	
+<select id="gender" name="gender"class="napkeeComponent napkeeCombobox">
+<option>Gender</option>
+<option value="Male">Male</option>
+<option value="Female">Female</option>
+</select>
+	
+<input id="day" name="day"type="text" placeholder="Day" class="napkeeComponent napkeeTextinput" required/>
+	
+<select name="month"id="month" class="napkeeComponent napkeeCombobox">
+<option>Month</option><option value="January">January</option>
+<option value="February">February</option><option value="March">March</option>
+<option value="April">April</option><option value="May">May</option>
+<option value="June">June</option><option value="July">July</option>
+<option value="August">August</option><option value="September">September</option>
+<option value="October">October</option><option value="November">November</option>
+<option value="December">December</option>
+</select>
+	
+<input id="year" name="year"type="text" placeholder="Year" class="napkeeComponent napkeeTextinput" required/>
+	
+<a id="chooseimg" href="#" class="napkeeComponent napkeeLink">Choose from your computer</a>
+	
+<select id="ccard" name="ccard"class="napkeeComponent napkeeCombobox">
+<option>Credit Card Type</option>
+</select>
+	
+<input id="cnum" name="cnum"type="text" placeholder="Credit Card Number" class="napkeeComponent napkeeTextinput" />
+
+
+<input id="pw" name="pw"type="password" placeholder="Password" class="napkeeComponent napkeeTextinput" required/>
+<input id="cpw" name="cpw"type="password" placeholder="Confirm Password" class="napkeeComponent napkeeTextinput" required/>
+
+	
+<button id="createacct" onsubmit="myFunction()" type="submit" class="napkeeComponent napkeeButton btn">Create Account</button>
+	
+<a id="printlink" href="#" class="napkeeComponent napkeeLink">Printed Copy</a>
+
+</form>
+	
+	<script>
+function myFunction() {
+    alert("Thank You!\n\nYou are now one of us.");
+	
+}
+</script>
+	
+	
+	
+    <script type="text/javascript" charset="utf-8">
+	    function showMockup(url,params){
+			var finalUrl = url + "?";
+			if (params!=null){
+				jQuery.each(params, function(par, field){
+					finalUrl += par + "=" + $("#"+field).val() + "&";
+				});
+			}
+			location.href = finalUrl;
+		}
+		$(document).ready(function(){
+			$(".accordion").each(function(){
+				var _acc = $(this);
+				_acc.find(".accordion-inner").height(_acc.height() - (_acc.find(".accordion-inner").length * 36));
+			});
+			$(document).on("click", function(e){
+				$("[data-date]").datepicker('show');
+			});
+	
+$("#createacct").click(function(event){
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+$("#printlink").click(function(event){
+	event.preventDefault();
+	
+	event.stopPropagation();
+	event.preventDefault();
+
+});
+	
+		});
+	</script>
+	
+	</div>
+  </body>
+</html>
