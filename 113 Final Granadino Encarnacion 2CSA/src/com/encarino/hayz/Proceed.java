@@ -38,6 +38,7 @@ public class Proceed extends HttpServlet {
 			st = con.createStatement();
 			rs = st.executeQuery("select * from MemberInfo where emailAddress='" + username + "' and pw='" + pwd + "'");
 			if (rs.next()) {
+				response.addCookie(uname);
 			    response.sendRedirect("index.jsp");
 			} else {
 				response.sendRedirect("sign.html");
